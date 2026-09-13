@@ -114,8 +114,8 @@ export default function Home() {
           Free, and built for the first in their family.
         </p>
         <h1 id="home-title">
-          Admission <br />
-          Possible
+          Impossible <br />
+          Becomes Possible
         </h1>
         <p className="report-hero__credit">
           By first-gen students.
