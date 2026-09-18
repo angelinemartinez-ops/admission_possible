@@ -47,7 +47,7 @@ function composeMessage(p: JoinPayload): string {
 }
 
 export default function Join() {
-  const [label, setLabel] = useState('Join');
+  const [label, setLabel] = useState('Join us');
   const [error, setError] = useState<string | null>(null);
   // Which field the error belongs to, so it can be announced on that input
   // rather than as a loose paragraph the user has to hunt for.
@@ -125,7 +125,7 @@ export default function Join() {
       formRef.current?.reset();
       setLabel('Thanks');
       window.clearTimeout(labelTimer.current);
-      labelTimer.current = window.setTimeout(() => setLabel('Join'), 1800);
+      labelTimer.current = window.setTimeout(() => setLabel('Join us'), 1800);
     } catch {
       // Delivery failed. Keep every typed answer and hand the student something
       // they can actually use, rather than asking them to retype it into email.
@@ -161,8 +161,8 @@ export default function Join() {
   return (
     <main className="interior">
       <EditorialHero
-        kicker="Join / Let's make admission possible"
-        title="Join"
+        kicker="Join us / Let's make admission possible"
+        title="Join us"
         tone="pink"
         note="The next step starts here"
       />

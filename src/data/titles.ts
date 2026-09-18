@@ -6,8 +6,6 @@ const SITE = '(Ad)mission Possible';
 // Routes outside NAV. NAV supplies the rest so a renamed menu item can't drift
 // from its page title.
 const EXTRA: Record<string, string> = {
-  '/writing-course': 'The writing course',
-  '/list-builder': 'College list builder',
   '/router': 'Your 2-minute intake',
   '/plan': 'Your plan',
   '/dashboard': 'Your dashboard',

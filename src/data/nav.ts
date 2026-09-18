@@ -6,9 +6,7 @@ export const NAV: NavItem[] = [
   { id: 'about', label: 'About us', path: '/about' },
   { id: 'how', label: 'How admissions works', path: '/how' },
   { id: 'offer', label: 'What we offer', path: '/offer' },
-  { id: 'pathways', label: 'Pathways', path: '/pathways' },
-  { id: 'coaching', label: 'Coaching', path: '/coaching' },
-  { id: 'join', label: 'Join', path: '/join' },
+  { id: 'join', label: 'Join us', path: '/join' },
 ];
 
 // Shown in the menu and footer only once a plan exists. Deliberately kept out

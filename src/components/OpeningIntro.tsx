@@ -7,7 +7,7 @@ export function OpeningIntro({ onSkip }: { onSkip: () => void }) {
     <>
       <div className="opening-intro" aria-hidden="true">
         <div className="opening-intro__card">
-          <span className="opening-intro__first">Admission</span>
+          <span className="opening-intro__first">Impossible becomes</span>
           <span className="opening-intro__last">Possible</span>
           <div className="opening-intro__brand">
             <Wordmark />

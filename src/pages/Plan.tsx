@@ -101,9 +101,6 @@ export default function Plan() {
           <SchoolCol title="Target" list={p.target} />
           <SchoolCol title="Likely" list={p.likely} />
         </div>
-        <div className="ov-plan__hint">
-          Refine this in the <Link to="/list-builder">List Builder</Link>.
-        </div>
       </div>
 
       <div className="ov-plan__track">

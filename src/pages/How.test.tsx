@@ -15,18 +15,9 @@ describe('How admissions works page', () => {
     expect(titles).toEqual(['Route', 'Build your list', 'Learn & write', 'Apply', 'Submit']);
   });
 
-  it('describes apply as flowing from the college list, not as our routing moment', () => {
+  it('keeps the process concise and avoids unapproved detail blocks', () => {
     renderWithRouter(<App />, { route: '/how' });
-    expect(screen.queryByText('We route you to QuestBridge, UC, Common App, and more.')).not.toBeInTheDocument();
-    expect(screen.getByText(/your list decides the portals/i)).toBeInTheDocument();
-  });
-
-  it('explains each phase in a detail section further down the page', () => {
-    renderWithRouter(<App />, { route: '/how' });
-    expect(screen.getByText(/provide details about your background/i)).toBeInTheDocument();
-    expect(screen.getByText(/balanced across preference and financials/i)).toBeInTheDocument();
-    expect(screen.getByText(/one-on-one peer coaching/i)).toBeInTheDocument();
-    expect(screen.getByText(/QuestBridge, UC, Common App, etc\./)).toBeInTheDocument();
-    expect(screen.getByText(/all in one calm place/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Step by step/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/deadlines, drafts, and next steps/i)).toBeInTheDocument();
   });
 });

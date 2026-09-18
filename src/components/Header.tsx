@@ -28,8 +28,8 @@ export function Header({ onMenu }: { onMenu: () => void }) {
         </Link>
         <Link className="header__join" to="/join">
           <span className="roll-label">
-            <span>Get involved</span>
-            <span aria-hidden="true">Get involved</span>
+            <span>Join us</span>
+            <span aria-hidden="true">Join us</span>
           </span>
           <span className="nav-plus" aria-hidden="true">
             ↗

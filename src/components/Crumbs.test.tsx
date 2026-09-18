@@ -14,8 +14,8 @@ describe('Crumbs', () => {
     expect(current.closest('a')).toBeNull();
 
     // Another nav item is a link to its path.
-    const pathways = screen.getByRole('link', { name: 'Pathways' });
-    expect(pathways.getAttribute('href')).toBe('/pathways');
+    const offer = screen.getByRole('link', { name: 'What we offer' });
+    expect(offer.getAttribute('href')).toBe('/offer');
   });
 
   it('supports custom crumb entries (sub-pages)', () => {

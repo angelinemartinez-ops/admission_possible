@@ -10,13 +10,10 @@ export function Footer({ hasPlan = false }: FooterProps) {
   return (
     <footer className="footer">
       <div className="footer__contact">
-        <span className="eyebrow">Keep the conversation going</span>
-        <h2>
-          A question.
-          <br />A draft. A fresh start.
-        </h2>
+        <span className="eyebrow">Your next chapter</span>
+        <h2>By first-gen students. For the next ones.</h2>
         <Link className="bar-link" to="/join">
-          <span>Let’s talk</span>
+          <span>Join us</span>
           <span aria-hidden="true">↗</span>
         </Link>
       </div>
@@ -24,8 +21,8 @@ export function Footer({ hasPlan = false }: FooterProps) {
         <div className="footer__col--left">
           <Wordmark />
           <p className="footer__blurb">
-            Built for the first in their family. The college application, demystified. Where to apply, how to apply, how
-            to write the essays that get you in. Free.
+            Admission Possible provides guided mentorship to help students find their direction, carve their path, and
+            work toward their goals.
           </p>
         </div>
         <nav className="footer__links" aria-label="Footer">
@@ -37,11 +34,8 @@ export function Footer({ hasPlan = false }: FooterProps) {
           ))}
         </nav>
         <div className="footer__resources">
-          <span className="eyebrow">Your next step</span>
-          <Link to="/router">Get your plan ↗</Link>
-          <Link to="/writing-course">The writing course ↗</Link>
-          <Link to="/list-builder">College list builder ↗</Link>
-          <span className="footer__tag">● First-gen access</span>
+          <span className="eyebrow">First-gen access</span>
+          <span className="footer__tag">Free guidance for what comes next.</span>
         </div>
       </div>
       <div className="footer__legal">
