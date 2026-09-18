@@ -74,7 +74,7 @@ describe('useOpeningIntro lifecycle', () => {
 
   it('does not start an intro when entering home through an in-app navigation', () => {
     const { result, rerender } = renderHook(({ path }) => useOpeningIntro(path), {
-      initialProps: { path: '/coaching' },
+      initialProps: { path: '/offer' },
     });
     expect(result.current.opening).toBe(false);
     rerender({ path: '/' });

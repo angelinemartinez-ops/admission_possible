@@ -5,19 +5,14 @@ import { computePlan } from './data/plan';
 import { saveIntake } from './data/storage';
 import { renderWithRouter } from './test/utils';
 
-// #47: App.tsx defines 14 routes and only 4 were rendered by any test —
-// Offer, WritingCourse, ListBuilder, Coaching and TeamMember appeared in none,
-// so a regression on five pages would have shipped with a green suite.
+// Keep every public route covered, including the intentional 404s for removed
+// product pages.
 const ROUTES: [string, RegExp][] = [
   ['/', /Admission Possible/],
   ['/about', /who we are/i],
   ['/how', /How admissions works/],
   ['/offer', /What we offer/],
-  ['/writing-course', /Show me you can write/],
-  ['/list-builder', /A list built on fit/],
-  ['/pathways', /Application pathways/],
-  ['/coaching', /A coach who was a first-gen applicant/],
-  ['/join', /^Join$/],
+  ['/join', /^Join us$/],
   ['/router', /Your 2-minute intake/],
   ['/privacy', /^Privacy$/],
   ['/team/jose', /My story/],
@@ -34,6 +29,13 @@ describe('every route renders', () => {
     it(`renders ${route}`, () => {
       renderWithRouter(<App />, { route });
       expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
+    });
+  }
+
+  for (const route of ['/pathways', '/coaching', '/writing-course', '/list-builder']) {
+    it(`does not serve removed route ${route}`, () => {
+      renderWithRouter(<App />, { route });
+      expect(screen.getByText("This page didn't make the cut.")).toBeInTheDocument();
     });
   }
 

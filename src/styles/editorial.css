@@ -1120,6 +1120,123 @@ html.is-animated [data-reveal] {
   html {
     scroll-padding-top: 56px;
   }
+
+  /* Revision: keep the opening and closing moments editorial rather than card-like. */
+  .report-hero {
+    position: relative;
+    min-height: min(100svh, 900px);
+    padding: 0;
+    display: grid;
+    align-items: end;
+  }
+  .report-hero .report-art {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    z-index: 0;
+  }
+  .report-hero__copy {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 2fr) 1fr;
+    gap: 24px;
+    align-items: end;
+    width: 100%;
+    padding: 48px 24px 32px;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(17, 17, 17, 0.7));
+  }
+  .report-hero__copy h1 {
+    margin: 0;
+    font-size: clamp(3.5rem, 8vw, 9rem);
+    line-height: 0.86;
+    letter-spacing: -0.08em;
+  }
+  .report-hero__copy h1 em,
+  .report-belief h2 em {
+    color: var(--plum);
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.08em;
+  }
+  .report-hero__intro,
+  .report-hero__credit {
+    margin: 0;
+    font-size: 15px;
+  }
+  .report-hero__scroll {
+    justify-self: end;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 8px;
+  }
+  .report-hero__scroll span:last-child {
+    transition: transform 0.3s ease;
+  }
+  .report-hero__scroll:hover span:last-child {
+    transform: translateY(5px);
+  }
+  .report-systems,
+  .report-mission,
+  .report-belief,
+  .report-story,
+  .report-start {
+    border-top: 1px solid rgba(17, 17, 17, 0.45);
+  }
+  .report-systems {
+    min-height: 45svh;
+    display: grid;
+    align-content: center;
+    gap: 20px;
+  }
+  .report-systems h2 {
+    max-width: 10ch;
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 8rem);
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+  }
+  .report-systems p { max-width: 35rem; }
+  .report-story__team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .report-story__team a {
+    display: grid;
+    gap: 10px;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 10px;
+  }
+  .report-story__team img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--pink);
+  }
+  .report-ending {
+    padding: 8vw 16px 10vw;
+    color: var(--plum);
+    font-size: clamp(4rem, 13vw, 14rem);
+    line-height: 0.8;
+    letter-spacing: -0.1em;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .report-hero__copy {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 36px 16px 24px;
+    }
+    .report-hero__scroll { justify-self: start; }
+    .report-story__team { grid-template-columns: repeat(2, 1fr); }
+    .report-ending { font-size: 20vw; }
+  }
   .header__bar {
     height: 56px;
   }
@@ -1464,4 +1581,93 @@ html.is-animated [data-reveal] {
 .field select:focus-visible {
   outline: 2px solid #111;
   outline-offset: 5px;
+}
+
+/* Homepage revision: a single editorial opening, journey, and closing invitation. */
+.report-hero {
+  position: relative;
+  min-height: min(100svh, 900px);
+  padding: 0;
+  display: grid;
+  align-items: end;
+}
+.report-hero .report-art {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  z-index: 0;
+}
+.report-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 2fr) 1fr;
+  gap: 24px;
+  align-items: end;
+  padding: 48px 24px 32px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(17, 17, 17, 0.7));
+}
+.report-hero__copy h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  line-height: 0.86;
+  letter-spacing: -0.08em;
+}
+.report-hero__copy h1 em,
+.report-belief h2 em {
+  color: var(--plum);
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.08em;
+}
+.report-hero__intro,
+.report-hero__credit { margin: 0; font-size: 15px; }
+.report-hero__scroll {
+  justify-self: end;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 8px;
+}
+.report-hero__scroll span:last-child { transition: transform 0.3s ease; }
+.report-hero__scroll:hover span:last-child { transform: translateY(5px); }
+.report-systems,
+.report-mission,
+.report-belief,
+.report-story,
+.report-start { border-top: 1px solid rgba(17, 17, 17, 0.45); }
+.report-systems {
+  min-height: 45svh;
+  display: grid;
+  align-content: center;
+  gap: 20px;
+}
+.report-systems h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 8rem);
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+}
+.report-systems p { max-width: 35rem; }
+.report-story__team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.report-story__team a { display: grid; gap: 10px; border-bottom: 1px solid currentColor; padding-bottom: 10px; }
+.report-story__team img { width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--pink); }
+.report-ending {
+  padding: 8vw 16px 10vw;
+  color: var(--plum);
+  font-size: clamp(4rem, 13vw, 14rem);
+  line-height: 0.8;
+  letter-spacing: -0.1em;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .report-hero__copy { grid-template-columns: 1fr; gap: 18px; padding: 36px 16px 24px; }
+  .report-hero__scroll { justify-self: start; }
+  .report-story__team { grid-template-columns: repeat(2, 1fr); }
+  .report-ending { font-size: 20vw; }
 }

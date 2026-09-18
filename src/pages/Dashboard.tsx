@@ -58,7 +58,7 @@ export default function Dashboard() {
           <div className="label">Next step · Sample progress</div>
           <div className="ov-dash__step">Finish Lesson 2</div>
         </div>
-        <Circle size="dash" to="/writing-course">
+        <Circle size="dash" to="/join">
           Continue
         </Circle>
       </div>

@@ -16,10 +16,6 @@ export const MARKETING_ROUTES = [
   '/about',
   '/how',
   '/offer',
-  '/writing-course',
-  '/list-builder',
-  '/pathways',
-  '/coaching',
   '/join',
   '/privacy',
 ];
@@ -37,10 +33,6 @@ export const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/about': 'The founding team behind (Ad)mission Possible.',
   '/how': 'How college admissions actually works, phase by phase — from building a list to submitting.',
   '/offer': 'A self-paced path through the essays, or a coach who was a first-gen applicant two years ago. Free.',
-  '/writing-course': 'Eight modules from picking a topic to the last short answer.',
-  '/list-builder': 'How to build a college list balanced on fit and finances, not luck.',
-  '/pathways': 'Common App, UC, QuestBridge, Coalition, ApplyTexas and CBCA — every application system side by side.',
-  '/coaching': 'Get matched with a coach who was a first-gen applicant two years ago.',
   '/join': 'Tell us about yourself and we will email you back.',
   '/privacy': 'What we collect, where it goes, and how long we keep it.',
 };

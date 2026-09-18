@@ -40,12 +40,6 @@ describe('Plan', () => {
     expect(screen.getByText('1:1 Coaching')).toBeInTheDocument();
   });
 
-  it('links the starter-list hint to the List Builder', () => {
-    saveIntake({ answers: {}, plan: computePlan({}) });
-    renderWithRouter(<App />, { route: '/plan' });
-    expect(screen.getByRole('link', { name: 'List Builder' })).toHaveAttribute('href', '/list-builder');
-  });
-
   // #32: the plan is stored on this device only, so it needs a way out of the tab.
   it('renders the plan as copyable text with every school on the list', () => {
     const plan = computePlan({ firstgen: 'Yes', pell: 'Yes', gpa: '3.8-4.0, lots of rigor' });

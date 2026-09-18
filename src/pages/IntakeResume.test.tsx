@@ -52,37 +52,3 @@ describe('re-entering the intake', () => {
     expect(loadIntake()?.trackOverride).toBe('1:1 Coaching');
   });
 });
-
-describe('plan-aware CTAs', () => {
-  beforeEach(() => {
-    localStorage.clear();
-    sessionStorage.clear();
-  });
-
-  it('shows the real starter list on the List Builder once a plan exists', () => {
-    const plan = computePlan(ANSWERS);
-    saveIntake({ answers: ANSWERS, plan });
-    renderWithRouter(<App />, { route: '/list-builder' });
-
-    expect(screen.getByText('Your starter list')).toBeInTheDocument();
-    expect(screen.getByText(plan.reach[0].name)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Copy my list' })).toBeInTheDocument();
-  });
-
-  it('keeps the List Builder a brochure when there is no plan', () => {
-    renderWithRouter(<App />, { route: '/list-builder' });
-    expect(screen.queryByText('Your starter list')).not.toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Build my list' })).toHaveAttribute('href', '/router');
-  });
-
-  it('points Pathways at the existing plan instead of restarting the intake', () => {
-    saveIntake({ answers: ANSWERS, plan: computePlan(ANSWERS) });
-    renderWithRouter(<App />, { route: '/pathways' });
-    expect(screen.getByRole('link', { name: 'See my pathway' })).toHaveAttribute('href', '/plan');
-  });
-
-  it('points Pathways at the intake when there is no plan', () => {
-    renderWithRouter(<App />, { route: '/pathways' });
-    expect(screen.getByRole('link', { name: 'See my pathway' })).toHaveAttribute('href', '/router');
-  });
-});

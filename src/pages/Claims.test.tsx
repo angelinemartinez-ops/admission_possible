@@ -22,7 +22,7 @@ describe('marketing copy makes no unbacked product claims', () => {
     sessionStorage.clear();
   });
 
-  for (const route of ['/offer', '/writing-course', '/coaching', '/']) {
+  for (const route of ['/offer', '/']) {
     it(`does not promise unbuilt features on ${route}`, () => {
       renderWithRouter(<App />, { route });
       const text = document.body.textContent ?? '';
@@ -50,10 +50,4 @@ describe('marketing copy makes no unbacked product claims', () => {
     }
   });
 
-  // Was /router, which dropped a student who had already finished the intake
-  // back onto question 1.
-  it('sends the writing-course CTA somewhere real instead of restarting the intake', () => {
-    renderWithRouter(<App />, { route: '/writing-course' });
-    expect(screen.getByRole('link', { name: 'Ask for a coach' })).toHaveAttribute('href', '/join');
-  });
 });
